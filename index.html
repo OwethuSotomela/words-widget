@@ -4,32 +4,39 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+      integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+      crossorigin="anonymous"
+    ></script>
     <title>Words-Widget</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
+
   <body>
-    <h1>Words-Widget</h1>
-    <aside>
-      <a
-        href="https://coolors.co/157f1f-c0caad-504136-e94f37-ea526f"
-        target="_blank"
-        >Colors</a
-      >
-    </aside>
-    <div class="wor">
-      <header class="feedback"></header>
-      <input type="text" class="words" value="" />
-      <input type="button" class="analyzeBtn" value="Analyze" />
-      <!-- <div class="row"> -->
+    <div class="container">
+      <h1>Words-Widget</h1>
+      <div class="row">
+        <header class="feedback"></header>
+        <input type="text" class="words" value="" />
+        <input type="button" class="analyzeBtn" value="Analyze" />
+        
         <div class="footer"></div>
-      <div class="counted"></div>
-      <!-- </div> -->
-      <div class="hideContent">
-        <input type="checkbox" class="hideCheck" name="hideCheck" value="checked">Hide
+        <div class="counted"></div>
+        <div class="hideContent">
+          <input type="checkbox" class="hideCheck" name="hideCheck" value="checked" />Hide
+        </div>
+        <div clas="checkMe"></div>
       </div>
-      <div clas="checkMe"></div>
+
+      <script src="./js/app.js"></script>
     </div>
-    
-    <script src="./js/app.js"></script>
+
   </body>
 </html>
