@@ -2,7 +2,6 @@ let inputWords = document.querySelector(".words");
 let feedback = document.querySelector(".feedback");
 let display = document.querySelector(".footer");
 let btn = document.querySelector(".analyzeBtn");
-let counterBtn = document.querySelector("countBtn");
 let counted = document.querySelector(".counted");
 
 let sentenceAnalyze = inputWords.value;
