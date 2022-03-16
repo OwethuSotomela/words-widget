@@ -10,3 +10,7 @@ h1 {
 .footer {
   margin-top: 2vh;
 }
+.row{
+display: flex;
+flex-direction: row;
+}
