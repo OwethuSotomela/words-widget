@@ -26,7 +26,7 @@ function theseWords() {
     if (newColor.length > 4) {
       color += ` <mark style="color:#157F1F">  ${newColor}  </mark> `;
     } else {
-      color += newColor;
+      color += newColor + " ";
     }
   }
   display.innerHTML = color;

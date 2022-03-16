@@ -4,14 +4,15 @@ h1 {
   color: white;
 }
 .feedback {
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
 }
 .footer {
   margin-top: 2vh;
 }
+
 .row {
-  margin-top: 15%;
-  margin-left: 2%;
+  margin-top: 10%;
+  margin-left: 1%;
   margin-right: 2%;
   background-color: #ddc9b4;
   width: 100%;
@@ -27,7 +28,10 @@ h1 {
 body {
   background-color: #2a3d45;
 }
-input.analyzeBtn{
-    background-color: #7A6C5D;
-    padding: 1px 1px
+input.analyzeBtn {
+  background-color: #7a6c5d;
+  width: 15%;
+}
+input.words {
+  width: 80%;
 }
