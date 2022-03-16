@@ -21,7 +21,7 @@ function theseWords() {
     let newColor = myColored[i];
     console.log(newColor);
     if (newColor.length > 4) {
-      color += `<mark style="color: #157F1F">  ${newColor}  </mark>`;
+      color += ` <mark style="color:#157F1F">  ${newColor}  </mark> `;
     } else {
       color += newColor;
     }
@@ -29,7 +29,10 @@ function theseWords() {
   display.innerHTML = color;
 
   counted.innerHTML = sentenceAnalyze.split(" ").length;
-  sentenceAnalyze.split(" ").length;
+}
+
+function hideWords(){
+  // let hideShort = 
 }
 
 btn.addEventListener("click", theseWords);

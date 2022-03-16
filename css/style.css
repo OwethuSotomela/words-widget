@@ -1,6 +1,12 @@
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
-.wor{
-    text-align: center;
+.wor {
+  text-align: center;
+}
+.feedback {
+  margin-bottom: 2vh;
+}
+.footer {
+  margin-top: 2vh;
 }

@@ -9,3 +9,8 @@ The widget:
 * and show how many words are in the sentence.
 
 Select a decent color sceme for your widget from coolors.
+
+Hide & highlight
+
+* There should be an option to hide all words shorter than 5 characters. Use a checkbox.
+* Highlight the longest word/s in the sentence.
