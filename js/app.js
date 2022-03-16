@@ -2,6 +2,8 @@ let inputWords = document.querySelector(".words");
 let feedback = document.querySelector(".feedback");
 let display = document.querySelector(".footer");
 let btn = document.querySelector(".analyzeBtn");
+let counterBtn = document.querySelector("countBtn");
+let counted = document.querySelector(".counted");
 
 let sentenceAnalyze = inputWords.value;
 
@@ -15,17 +17,20 @@ function theseWords() {
   }
 
   let myColored = sentenceAnalyze.split(" ");
-console.log(myColored);
+
   for (let i = 0; i < myColored.length; i++) {
     let newColor = myColored[i];
-    console.log(newColor)
+    console.log(newColor);
     if (newColor.length > 4) {
-      color += `<mark style="color: #1EC22F;">${newColor} </mark>`;
+      color += `<mark style="color: #157F1F">  ${newColor}  </mark>`;
     } else {
       color += newColor;
     }
   }
   display.innerHTML = color;
+
+  counted.innerHTML = sentenceAnalyze.split(" ").length;
+  sentenceAnalyze.split(" ").length;
 }
 
 btn.addEventListener("click", theseWords);
