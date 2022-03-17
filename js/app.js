@@ -40,6 +40,7 @@ function theseWords() {
 
 function hideWords() {
   let checkBox = document.querySelector("input[name='hideCheck']:checked");
+  let color = "";
 
   if (checkBox) {
     var hideCheck = checkBox.value;
@@ -68,10 +69,20 @@ function hideWords() {
       display.innerHTML = color;
     }
   } else {
-    display.innerHTML =
+    var sentenceAnalyze =
       inputWords.value[0].toUpperCase() +
       inputWords.value.slice(1).toLowerCase();
-    // console.log(inputWords.value);
+    let myColored = sentenceAnalyze.split(" ");
+    for (let i = 0; i < myColored.length; i++) {
+      let newColor = myColored[i];
+      if (newColor.length > 4) {
+        color += `<mark style="color:#157F1F">  ${newColor}  </mark>`;
+      } else {
+        color += newColor + " ";
+      }
+
+      display.innerHTML = color;
+    }
   }
 }
 
