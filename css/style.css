@@ -1,15 +1,19 @@
 h1 {
+  font-family:Georgia, 'Times New Roman', Times, serif;
   text-align: center;
   margin-top: 5vh;
   color: white;
 }
 .feedback {
   margin-bottom: 1vh;
+  color: #2a3d45;
 }
 .footer {
   margin-top: 2vh;
 }
-
+.words {
+  text-align: center;
+}
 .row {
   margin-top: 10%;
   margin-left: 1%;
@@ -31,6 +35,7 @@ body {
 input.analyzeBtn {
   background-color: #7a6c5d;
   width: 15%;
+  color: white;
 }
 input.words {
   width: 80%;
