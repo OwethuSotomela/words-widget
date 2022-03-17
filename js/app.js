@@ -27,7 +27,7 @@ function theseWords() {
     let newColor = myColored[i];
 
     if (newColor.length > 4) {
-      color += `<mark style="color:#157F1F">  ${newColor}  </mark>`;
+      color += `<mark style="color:#110B11">  ${newColor}  </mark>`;
     } else {
       color += newColor + " ";
     }
@@ -43,7 +43,7 @@ function hideWords() {
   let color = "";
 
   if (checkBox) {
-    var hideCheck = checkBox.value;
+    let hideCheck = checkBox.value;
     if (hideCheck != "") {
       let color = "";
 
@@ -61,7 +61,7 @@ function hideWords() {
         let newColor = myColored[i];
 
         if (newColor.length > 5) {
-          color += `<mark style="color:#157F1F"> ${newColor} </mark>`;
+          color += `<mark style="color:#110B11"> ${newColor} </mark>`;
         } else {
           color += " " + " ";
         }
@@ -69,18 +69,17 @@ function hideWords() {
       display.innerHTML = color;
     }
   } else {
-    var sentenceAnalyze =
+    let sentenceAnalyze =
       inputWords.value[0].toUpperCase() +
       inputWords.value.slice(1).toLowerCase();
     let myColored = sentenceAnalyze.split(" ");
     for (let i = 0; i < myColored.length; i++) {
       let newColor = myColored[i];
       if (newColor.length > 4) {
-        color += `<mark style="color:#157F1F">  ${newColor}  </mark>`;
+        color += `<mark style="color:#110B11">  ${newColor}  </mark>`;
       } else {
         color += newColor + " ";
       }
-
       display.innerHTML = color;
     }
   }
