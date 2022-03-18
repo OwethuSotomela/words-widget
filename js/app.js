@@ -4,9 +4,7 @@ let display = document.querySelector(".footer");
 let btn = document.querySelector(".analyzeBtn");
 let counted = document.querySelector(".counted");
 let checkBox = document.querySelector(".hideCheck");
-let longBtn = document.querySelector(".longBtn");
-// let checkMe = document.querySelector(".checkMe");
-// let longWord = document.querySelector(".long")
+let longWordBtn = document.querySelector(".longBtn");
 
 let sentenceAnalyze = inputWords.value;
 
@@ -59,7 +57,6 @@ function hideWords() {
 
       for (let i = 0; i < myColored.length; i++) {
         let newColor = myColored[i];
-
         if (newColor.length > 5) {
           color += `<mark style="color:#110B11"> ${newColor} </mark>`;
         } else {
@@ -76,7 +73,7 @@ function hideWords() {
     for (let i = 0; i < myColored.length; i++) {
       let newColor = myColored[i];
       if (newColor.length > 4) {
-        color += `<mark style="color:#110B11">  ${newColor}  </mark>`;
+        color += `<mark style="color:#110B11"> ${newColor} </mark>`;
       } else {
         color += newColor + " ";
       }
@@ -85,5 +82,39 @@ function hideWords() {
   }
 }
 
+function findLongestWord() {
+  if (sentenceAnalyze != "") {
+    var sentenceAnalyze =
+      inputWords.value[0].toUpperCase() +
+      inputWords.value.slice(1).toLowerCase();
+  }
+  let myColored = sentenceAnalyze.split(" ");
+  const longestWord = myColored.reduce(function (longest, currentWord) {
+    if (currentWord.length > longest.length) {
+      return currentWord;
+    } else {
+      return longest;
+    }
+  }, "");
+
+  console.log(longestWord);
+
+  let color = "";
+  for (let i = 0; i < myColored.length; i++) {
+    let newColor = myColored[i];
+    if (newColor.length > 5 ) {
+      if (newColor == longestWord) {
+        color += ` <mark style="background-color: #42CAFD"> ${longestWord} </mark>`;
+      } else {
+        color += `<mark style="color:#110B11"> ${newColor} </mark>`;
+      }
+    } else {
+      color += "";
+    }
+  }
+  display.innerHTML = color;
+}
+
 btn.addEventListener("click", theseWords);
 checkBox.addEventListener("click", hideWords);
+longWordBtn.addEventListener("click", findLongestWord);
