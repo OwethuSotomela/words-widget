@@ -6,7 +6,7 @@ function WordsWidget(local) {
 
   function analyseWords(sentence) {
     let applyColor = "";
-    console.log(sentence);
+
     if (sentence != undefined) {
       mySentence = sentence[0].toUpperCase() + sentence.slice(1).toLowerCase();
       if (!sentenceList.includes(mySentence)) {
@@ -48,8 +48,49 @@ function WordsWidget(local) {
     return sentenceList;
   }
 
+  function hideShortWords() {
+    let checkBox = document.querySelector("input[name='hideCheck']:checked");
+    let applyColor = "";
+
+    if (checkBox) {
+      mySentence = mySentence[0].toUpperCase() + mySentence.slice(1).toLowerCase();
+
+      let splitSentence = mySentence.split(" ");
+      for (let i = 0; i < splitSentence.length; i++) {
+        let defColor = splitSentence[i];
+        if (defColor.length > 5) {
+          applyColor += `<mark style="color:#110B11"> ${defColor} </mark>`;
+        } else {
+          applyColor += " " + " ";
+        }
+      }
+      display.innerHTML = applyColor;
+      
+    } else {
+      mySentence = mySentence[0].toUpperCase() + mySentence.slice(1).toLowerCase();
+      let splitSentence = mySentence.split(" ");
+      for (let i = 0; i < splitSentence.length; i++) {
+        let defColor = splitSentence[i];
+        if (defColor.length > 4) {
+          applyColor += `<mark style="color:#110B11"> ${defColor} </mark>`;
+        } else {
+          applyColor += defColor + " ";
+        }
+        display.innerHTML = applyColor;
+      }
+    }
+  }
+
+  function clearLocalStorage() {
+    setTimeout(() => {
+      localStorage.clear(), location.reload();
+    }, 5000);
+  }
+
   return {
     analyseWords,
     getSentences,
+    hideShortWords,
+    clearLocalStorage,
   };
 }
