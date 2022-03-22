@@ -5,6 +5,10 @@ let btn = document.querySelector(".analyzeBtn");
 let counted = document.querySelector(".counted");
 let checkBox = document.querySelector(".hideCheck");
 let resetBtn = document.querySelector(".reset");
+let displaySentences = document.querySelector(".sentences");
+
+let templateSource = document.querySelector(".WordWidgetTemplate").innerHTML;
+let WordWidgetTemplate = Handlebars.compile(templateSource);
 
 var sentenceStored = [];
 if (localStorage["Last 5 Sentences"]) {
@@ -13,6 +17,11 @@ if (localStorage["Last 5 Sentences"]) {
 
 const wordsWidget = WordsWidget(sentenceStored);
 
+let element = document.querySelector(".myList")
+let node = document.createElement("li");
+let textnode = document.createTextNode(sentenceStored)
+node.appendChild(textnode);
+
 function theseWords() {
   let analyseSentence = inputWords.value;
   wordsWidget.analyseWords(analyseSentence);
@@ -20,6 +29,8 @@ function theseWords() {
     "Last 5 Sentences",
     JSON.stringify(wordsWidget.getSentences())
   );
+  displaySentences.innerHTML = WordWidgetTemplate({word: wordsWidget.getSentences()});
+  
 }
 
 function hideWords() {

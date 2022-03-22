@@ -17,6 +17,18 @@
     ></script>
     <title>Words-Widget</title>
     <link rel="stylesheet" href="./css/style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+    <script type="text/x-template" class="WordWidgetTemplate">
+      <ul style="list-style: none;">
+          {{#each word}}
+              <li>
+              {{this}}
+              </li>
+          {{/each}}
+      </ul>
+    </script>
   </head>
 
   <body>
@@ -41,9 +53,11 @@
             name="hideCheck"
             value="checked"
           /><em>Hide words shorter than 5 characters</em>
-          <input type="button" class="reset" value="Reset">
+          <input type="button" class="reset" value="Reset" />
         </div>
-        <div clas="checkMe"></div>
+        <div class="sentences">
+          <ul class="myList" style="list-style: none"></ul>
+        </div>
       </div>
 
       <script src="./js/words-widget.js"></script>

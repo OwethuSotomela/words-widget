@@ -48,12 +48,17 @@ function WordsWidget(local) {
     return sentenceList;
   }
 
+  function getMessage(){
+    return message;
+  }
+
   function hideShortWords() {
     let checkBox = document.querySelector("input[name='hideCheck']:checked");
     let applyColor = "";
 
     if (checkBox) {
-      mySentence = mySentence[0].toUpperCase() + mySentence.slice(1).toLowerCase();
+      mySentence =
+        mySentence[0].toUpperCase() + mySentence.slice(1).toLowerCase();
 
       let splitSentence = mySentence.split(" ");
       for (let i = 0; i < splitSentence.length; i++) {
@@ -65,9 +70,9 @@ function WordsWidget(local) {
         }
       }
       display.innerHTML = applyColor;
-      
     } else {
-      mySentence = mySentence[0].toUpperCase() + mySentence.slice(1).toLowerCase();
+      mySentence =
+        mySentence[0].toUpperCase() + mySentence.slice(1).toLowerCase();
       let splitSentence = mySentence.split(" ");
       for (let i = 0; i < splitSentence.length; i++) {
         let defColor = splitSentence[i];
@@ -90,6 +95,7 @@ function WordsWidget(local) {
   return {
     analyseWords,
     getSentences,
+    getMessage,
     hideShortWords,
     clearLocalStorage,
   };
