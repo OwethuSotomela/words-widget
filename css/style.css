@@ -10,6 +10,7 @@ h1 {
 }
 .footer {
   margin-top: 2vh;
+  font-weight: 900vh;
 }
 .words {
   text-align: center;
@@ -23,6 +24,14 @@ mark{
   border-radius: 12px;
   width: 50%;
   background-color: #F3A712;
+  color: white;
+  box-shadow: 0 20px 25px 0 rgba(5,5,5,5.2), 0 6px 20px 0 rgba(5,5,5,5.19);
+}
+.reset{
+  border: 1px solid white;
+  border-radius: 12px;
+  width: 25%;
+  background-color: red;
   color: white;
   box-shadow: 0 20px 25px 0 rgba(5,5,5,5.2), 0 6px 20px 0 rgba(5,5,5,5.19);
 }

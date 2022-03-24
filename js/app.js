@@ -6,6 +6,9 @@ let counted = document.querySelector(".counted");
 let checkBox = document.querySelector(".hideCheck");
 let resetBtn = document.querySelector(".reset");
 let displaySentences = document.querySelector(".sentences");
+let sentenceLinks = document.querySelector(".sentenceLinks");
+
+let spamClass = document.querySelector(".newElem");
 
 let templateSource = document.querySelector(".WordWidgetTemplate").innerHTML;
 let WordWidgetTemplate = Handlebars.compile(templateSource);
@@ -17,9 +20,9 @@ if (localStorage["Last 5 Sentences"]) {
 
 const wordsWidget = WordsWidget(sentenceStored);
 
-let element = document.querySelector(".myList")
+let element = document.querySelector(".myList");
 let node = document.createElement("li");
-let textnode = document.createTextNode(sentenceStored)
+let textnode = document.createTextNode(sentenceStored);
 node.appendChild(textnode);
 
 function theseWords() {
@@ -29,8 +32,10 @@ function theseWords() {
     "Last 5 Sentences",
     JSON.stringify(wordsWidget.getSentences())
   );
-  displaySentences.innerHTML = WordWidgetTemplate({word: wordsWidget.getSentences()});
-  
+  // console.log(wordsWidget.getSentences());
+  displaySentences.innerHTML = WordWidgetTemplate({
+    word: wordsWidget.getSentences(),
+  });
 }
 
 function hideWords() {
@@ -41,6 +46,14 @@ function localStorageClear() {
   wordsWidget.clearLocalStorage();
 }
 
+function sentenceDetails(event) {
+var target = event.target || event.srcElement;
+
+alert(target.innerHTML);
+// alert("Are you working?")
+}
+
 btn.addEventListener("click", theseWords);
 checkBox.addEventListener("click", hideWords);
 resetBtn.addEventListener("click", localStorageClear);
+element.addEventListener("click", sentenceDetails);

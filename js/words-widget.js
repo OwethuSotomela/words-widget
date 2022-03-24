@@ -89,6 +89,7 @@ function WordsWidget(local) {
   function clearLocalStorage() {
     setTimeout(() => {
       localStorage.clear(), location.reload();
+      feedback.innerHTML = "LocalStorage will be cleared in 5 seconds..!"
     }, 5000);
   }
 

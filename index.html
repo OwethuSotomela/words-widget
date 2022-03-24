@@ -21,11 +21,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 
     <script type="text/x-template" class="WordWidgetTemplate">
-      <ul style="list-style: none;">
+      <ul style="list-style: none;" class="sentenceLinks">
           {{#each word}}
               <li>
               {{this}}
-              </li>
+            </li>
           {{/each}}
       </ul>
     </script>
@@ -36,6 +36,7 @@
       <h1>Words-Widget</h1>
       <div class="row">
         <header class="feedback"></header>
+        <div class="newElem">Here</div>
         <input
           type="text"
           class="words"
@@ -52,7 +53,7 @@
             class="hideCheck"
             name="hideCheck"
             value="checked"
-          /><em>Hide words shorter than 5 characters</em>
+          /><em><b>Hide words shorter than 5 characters</b></em>
           <input type="button" class="reset" value="Reset" />
         </div>
         <div class="sentences">
