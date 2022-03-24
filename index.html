@@ -23,9 +23,9 @@
     <script type="text/x-template" class="WordWidgetTemplate">
       <ul style="list-style: none;" class="sentenceLinks">
           {{#each word}}
-              <li>
+              <li><a href="#">
               {{this}}
-            </li>
+              </a> </li>
           {{/each}}
       </ul>
     </script>
@@ -36,7 +36,6 @@
       <h1>Words-Widget</h1>
       <div class="row">
         <header class="feedback"></header>
-        <div class="newElem">Here</div>
         <input
           type="text"
           class="words"

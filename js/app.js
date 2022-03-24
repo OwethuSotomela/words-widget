@@ -48,12 +48,10 @@ function localStorageClear() {
 
 function sentenceDetails(event) {
 var target = event.target || event.srcElement;
-
-alert(target.innerHTML);
-// alert("Are you working?")
+inputWords.value = target.innerHTML;
 }
 
 btn.addEventListener("click", theseWords);
 checkBox.addEventListener("click", hideWords);
 resetBtn.addEventListener("click", localStorageClear);
-element.addEventListener("click", sentenceDetails);
+displaySentences.addEventListener("click", sentenceDetails);
