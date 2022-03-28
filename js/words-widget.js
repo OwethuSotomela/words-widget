@@ -29,7 +29,7 @@ function WordsWidget(local) {
       let defColor = splitSentence[i];
 
       if (defColor.length > 4) {
-        if (defColor == longestWord) {
+        if (defColor.length == longestWord.length) {
           applyColor += `<mark style="background-color:#42CAFD;"> ${longestWord} </mark>`;
         } else {
           applyColor += `<mark style="color:#110B11"> ${defColor} </mark>`;
@@ -39,9 +39,16 @@ function WordsWidget(local) {
       }
     }
 
+    let getSentenceAL = sentenceList.toString().split(" ");
+    console.log(typeof getSentenceAL);
+    console.log(getSentenceAL);
+    console.log(getSentenceAL.length);
+
     display.innerHTML = applyColor;
     counted.innerHTML =
       "You have " + mySentence.split(" ").length + " words in this sentence";
+
+      feedback.innerHTML = "The average words in these sentences is" + " " + getSentenceAL.length
   }
 
   function getSentences() {
@@ -89,8 +96,8 @@ function WordsWidget(local) {
   function clearLocalStorage() {
     setTimeout(() => {
       localStorage.clear(), location.reload();
-      feedback.innerHTML = "LocalStorage will be cleared in 5 seconds..!"
-    }, 5000);
+      feedback.innerHTML = "LocalStorage will be cleared in a second..!"
+    }, 1000);
   }
 
   return {

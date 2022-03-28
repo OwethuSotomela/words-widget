@@ -48,7 +48,6 @@ function localStorageClear() {
 function sentenceDetails(event) {
 var target = event.target || event.srcElement;
 inputWords.value = target.innerHTML;
-
 }
 
 btn.addEventListener("click", theseWords);
