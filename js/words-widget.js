@@ -38,24 +38,27 @@ function WordsWidget(local) {
         applyColor += defColor + " ";
       }
     }
+    
+    let count = 0;
+    for (let i = 0; i < sentenceList.length; i++) {
+      count += sentenceList[i].split(" ").length;
+    }
+    let average = count / sentenceList.length;
+    console.log(average);
 
-    let getSentenceAL = sentenceList.toString().split(" ");
-    console.log(typeof getSentenceAL);
-    console.log(getSentenceAL);
-    console.log(getSentenceAL.length);
 
     display.innerHTML = applyColor;
     counted.innerHTML =
       "You have " + mySentence.split(" ").length + " words in this sentence";
 
-      feedback.innerHTML = "The average words in these sentences is" + " " + getSentenceAL.length
+    feedback.innerHTML = `The average words in these sentences is ${average}`;
   }
 
   function getSentences() {
     return sentenceList;
   }
 
-  function getMessage(){
+  function getMessage() {
     return message;
   }
 
@@ -96,7 +99,7 @@ function WordsWidget(local) {
   function clearLocalStorage() {
     setTimeout(() => {
       localStorage.clear(), location.reload();
-      feedback.innerHTML = "LocalStorage will be cleared in a second..!"
+      feedback.innerHTML = "LocalStorage will be cleared in a second..!";
     }, 1000);
   }
 
