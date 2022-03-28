@@ -17,13 +17,13 @@ function WordsWidget(local) {
     }
     let splitSentence = mySentence.split(" ");
 
-    const longestWord = splitSentence.reduce(function (longest, currentWord) {
-      if (currentWord.length > longest.length) {
-        return currentWord;
-      } else {
-        return longest;
-      }
-    }, "");
+    const longestWord = splitSentence.reduce((longest, currentWord) => {
+        if (currentWord.length > longest.length) {
+          return currentWord;
+        } else {
+          return longest;
+        }
+      }, "");
 
     for (let i = 0; i < splitSentence.length; i++) {
       let defColor = splitSentence[i];
@@ -51,7 +51,6 @@ function WordsWidget(local) {
     display.innerHTML = applyColor;
     counted.innerHTML =
       "You have " + mySentence.split(" ").length + " words in this sentence";
-
   }
 
   function getSentences() {

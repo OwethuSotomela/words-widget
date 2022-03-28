@@ -7,7 +7,7 @@ h1 {
 .feedback {
   margin-bottom: 1vh;
   color: black;
-  font-weight: 900vh;
+  font-weight: 1000vh;
   background-color: white;
 }
 .footer {
@@ -54,7 +54,7 @@ body {
   background-image: url(../images/wp3.jpeg);
 }
 input.analyzeBtn {
-  background-color: #2A3D45;
+  background-color: #7C4700;
   width: 15%;
   color: white;
 }
