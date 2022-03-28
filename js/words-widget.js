@@ -30,7 +30,7 @@ function WordsWidget(local) {
 
       if (defColor.length > 4) {
         if (defColor == longestWord) {
-          applyColor += ` <mark style="background-color: #42CAFD"> ${longestWord} </mark>`;
+          applyColor += `<mark style="background-color:#42CAFD;"> ${longestWord} </mark>`;
         } else {
           applyColor += `<mark style="color:#110B11"> ${defColor} </mark>`;
         }

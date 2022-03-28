@@ -32,7 +32,6 @@ function theseWords() {
     "Last 5 Sentences",
     JSON.stringify(wordsWidget.getSentences())
   );
-  // console.log(wordsWidget.getSentences());
   displaySentences.innerHTML = WordWidgetTemplate({
     word: wordsWidget.getSentences(),
   });
@@ -49,6 +48,7 @@ function localStorageClear() {
 function sentenceDetails(event) {
 var target = event.target || event.srcElement;
 inputWords.value = target.innerHTML;
+
 }
 
 btn.addEventListener("click", theseWords);
