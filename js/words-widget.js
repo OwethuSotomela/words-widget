@@ -45,13 +45,13 @@ function WordsWidget(local) {
     }
     let average = count / sentenceList.length;
     console.log(average);
+    feedback.innerHTML = `Average words: ${average}`;
 
 
     display.innerHTML = applyColor;
     counted.innerHTML =
       "You have " + mySentence.split(" ").length + " words in this sentence";
 
-    feedback.innerHTML = `The average words in these sentences is ${average}`;
   }
 
   function getSentences() {
